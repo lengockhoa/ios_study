@@ -7,14 +7,27 @@ struct Diem{
     var y: Double
 }
 
-protocol Hinh{
+protocol ChuVi{
     func chuVi() -> Double
-    func dienTich() -> Double
-    func inThongTin()
-    func clone() -> Hinh
 }
 
-class HinhTron: Hinh{
+protocol DienTich{
+    func dienTich() -> Double
+}
+
+protocol InThongTin{
+    func inThongTin()
+}
+
+protocol Clone{
+    func clone() -> Self
+}
+
+protocol Hinh: ChuVi,DienTich,InThongTin,Clone{
+
+}
+
+final class HinhTron: Hinh{
     var tam: Diem
     var banKinh: Double
     
@@ -37,12 +50,12 @@ class HinhTron: Hinh{
         print("Đây là hình tròn với diện tích là: \(dienTich()) và chu vi là : \(chuVi())")
     }
     
-    func clone() -> Hinh{
-        return self
+    func clone() -> HinhTron{
+        return HinhTron(tam: self.tam, banKinh: self.banKinh)
     }
 }
 
-class HinhChuNhat: Hinh{
+final class HinhChuNhat: Hinh{
     var dai: Double
     var rong: Double
     
@@ -63,8 +76,8 @@ class HinhChuNhat: Hinh{
         print("Đây là hình vuông với diện tích là: \(dienTich()) và chu vi là : \(chuVi())")
     }
     
-    func clone() -> Hinh{
-        return self
+    func clone() -> HinhChuNhat{
+        return HinhChuNhat(dai: self.dai, rong: self.rong)
     }
 }
 
