@@ -8,9 +8,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
 
     var name: String = "12345"
+    @IBOutlet weak var label1: UILabel!
+    @IBOutlet weak var label2: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +22,13 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func changeName(){
+        let str = label1.text
+        label1.text = label2.text
+        label2.text = str
+        print("Hello 500 anh em")
     }
 
 
