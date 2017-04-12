@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gZf-ZB-F4n">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -18,11 +18,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="degrees Fahrenheit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T74-zx-Bpq">
-                                <rect key="frame" x="34.5" y="152" width="306" height="43"/>
+                                <rect key="frame" x="7" y="102.5" width="306" height="43"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="43" id="Qaw-mi-FZn"/>
                                     <constraint firstAttribute="width" constant="306" id="l2K-sm-RRW"/>
@@ -32,7 +32,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="is really" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OjL-KQ-kyh">
-                                <rect key="frame" x="128" y="232" width="119" height="43"/>
+                                <rect key="frame" x="100.5" y="182.5" width="119" height="43"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="43" id="67O-Bi-53p"/>
                                     <constraint firstAttribute="width" constant="119" id="GjL-8Z-liY"/>
@@ -42,7 +42,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YSC-4M-g7C">
-                                <rect key="frame" x="49" y="291.5" width="277" height="84"/>
+                                <rect key="frame" x="21.5" y="242" width="277" height="84"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="84" id="ay0-Fv-7oY"/>
                                     <constraint firstAttribute="width" constant="277" id="fNL-js-ac0"/>
@@ -52,7 +52,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="degrees Celcius" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Au3-qq-Kar">
-                                <rect key="frame" x="60" y="392" width="255" height="43"/>
+                                <rect key="frame" x="32.5" y="342.5" width="255" height="43"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="255" id="WQg-vR-Sz1"/>
                                     <constraint firstAttribute="height" constant="43" id="jJh-So-Ck7"/>
@@ -62,7 +62,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="value" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F4r-8M-zmm">
-                                <rect key="frame" x="65.5" y="59.5" width="245" height="68"/>
+                                <rect key="frame" x="38" y="10" width="245" height="68"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="68" id="mg7-ao-bvl"/>
                                     <constraint firstAttribute="width" constant="245" id="tLa-Ei-Y00"/>
@@ -136,7 +136,7 @@
                         <viewControllerLayoutGuide type="bottom" id="XgN-i9-1Qk"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ChO-kI-nYv">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>

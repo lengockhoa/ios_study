@@ -24,8 +24,10 @@ class MapViewController: UIViewController {
         segmentedControl.selectedSegmentIndex = 0
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(segmentedControl)
-        
+       
+        /*
         let topConstraint = segmentedControl.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor, constant: 8)
+        
         let margin = view.layoutMarginsGuide
         let leadingConstraint = segmentedControl.leadingAnchor.constraint(equalTo: margin.leadingAnchor)
         let trailingConstraint = segmentedControl.trailingAnchor.constraint(equalTo: margin.trailingAnchor)
@@ -33,6 +35,16 @@ class MapViewController: UIViewController {
         topConstraint.isActive = true
         leadingConstraint.isActive = true
         trailingConstraint.isActive = true
+        */
+        
+        
+        let exTopConstraint = NSLayoutConstraint(item: segmentedControl, attribute: .top, relatedBy: .equal, toItem: topLayoutGuide, attribute: .bottom, multiplier: 1.0, constant: 8)
+        let exLeadingConstraint = NSLayoutConstraint(item: segmentedControl, attribute: .leading, relatedBy: .equal, toItem: view.layoutMarginsGuide, attribute: .leading, multiplier: 1, constant: 0)
+        let exTrailingConstraint = NSLayoutConstraint(item: segmentedControl, attribute: .trailing, relatedBy: .equal, toItem: view.layoutMarginsGuide, attribute: .trailing, multiplier: 1, constant: 0)
+        
+        exTopConstraint.isActive = true
+        exLeadingConstraint.isActive = true
+        exTrailingConstraint.isActive = true
         
         
         
