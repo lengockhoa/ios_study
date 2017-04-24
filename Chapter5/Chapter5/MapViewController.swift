@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class MapViewController: UIViewController {
+class MapViewController: UIViewController, MKMapViewDelegate {
 
     var mapView: MKMapView!
     
@@ -19,12 +19,20 @@ class MapViewController: UIViewController {
         // Set it as the view of the view controller
         view = mapView
         
-        let segmentedControl = UISegmentedControl(items: ["Standard","Hybrid","Satellite"])
+        let standardString = NSLocalizedString("Standard", comment: "Standard map view")
+        let satelliteString = NSLocalizedString("Satellite", comment: "Satellite map view")
+        let hybridString = NSLocalizedString("Hybrid", comment: "Hybred map view")
+        let segmentedControl = UISegmentedControl(items: [standardString,hybridString,satelliteString])
         segmentedControl.backgroundColor = UIColor.white.withAlphaComponent(0.5)
         segmentedControl.selectedSegmentIndex = 0
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(segmentedControl)
        
+        let zoomButton = UIButton()
+        zoomButton.frame = CGRect(x: 100, y: 100, width: 100, height: 100)
+        zoomButton.backgroundColor = UIColor.blue
+        view.addSubview(zoomButton)
+        
         /*
         let topConstraint = segmentedControl.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor, constant: 8)
         
@@ -46,11 +54,29 @@ class MapViewController: UIViewController {
         exLeadingConstraint.isActive = true
         exTrailingConstraint.isActive = true
         
-        
-        
+        segmentedControl.addTarget(self, action: #selector(MapViewController.mapTypeChanged(_:)), for: .valueChanged)
+        zoomButton.addTarget(self, action: #selector(MapViewController.zoomLocation), for: .touchUpInside)
     }
     
-
+    func mapTypeChanged(_ segControl: UISegmentedControl){
+        switch segControl.selectedSegmentIndex {
+        case 0:
+            mapView.mapType = .standard
+        case 1:
+            mapView.mapType = .hybrid
+        case 2:
+            mapView.mapType = .satellite
+        default:
+            break
+        }
+    }
+    
+    func zoomLocation(){
+        let homeLocation = CLLocation(latitude: self.mapView.userLocation.coordinate.latitude, longitude: self.mapView.userLocation.coordinate.longitude)
+        let regionRadius: CLLocationDistance = 500
+        let coordinateRegion = MKCoordinateRegionMakeWithDistance(homeLocation.coordinate, regionRadius * 2.0, regionRadius * 2.0)
+        mapView.setRegion(coordinateRegion, animated: true)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
